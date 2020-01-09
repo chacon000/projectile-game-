@@ -1,3 +1,24 @@
+function projectile () {
+    projectile2 = sprites.createProjectileFromSprite(img`
+. . . . . . . . . . . . . . . . 
+. . . . . f f f . . . . . . . . 
+. . . . . f d f . . . . . . . . 
+. . . . . f d f . . . . . . . . 
+. . . . . f d f . . . . . . . . 
+f f f f f f d f f f f f f f . . 
+d d d d d d d d d d d d d d f . 
+d d d d d d d f d d d d d d f . 
+d d d d d d d f f f f f f f f . 
+d d d d d d d f d d d d d d f . 
+d d d d d d d f f f f f f f f . 
+d d d d d d d f d d d d d d f . 
+f f f f d d d f f f f f f f f . 
+. . . f f d d f d d d d d d f . 
+. . . . f f d f f f f f f f f . 
+. . . . . f f f d d d d d d f . 
+`, someGuy, 50, 0)
+    projectile2.setPosition(0, Math.randomRange(0, 120))
+}
 function player () {
     someGuy = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -20,29 +41,8 @@ function player () {
     someGuy.setPosition(78, 101)
     controller.moveSprite(someGuy, 100, 100)
 }
-function projectile () {
-    projectile2 = sprites.createProjectileFromSprite(img`
-. . . . . . . . . . . . . . . . 
-. . . . . f f f . . . . . . . . 
-. . . . . f d f . . . . . . . . 
-. . . . . f d f . . . . . . . . 
-. . . . . f d f . . . . . . . . 
-f f f f f f d f f f f f f f . . 
-d d d d d d d d d d d d d d f . 
-d d d d d d d f d d d d d d f . 
-d d d d d d d f f f f f f f f . 
-d d d d d d d f d d d d d d f . 
-d d d d d d d f f f f f f f f . 
-d d d d d d d f d d d d d d f . 
-f f f f d d d f f f f f f f f . 
-. . . f f d d f d d d d d d f . 
-. . . . f f d f f f f f f f f . 
-. . . . . f f f d d d d d d f . 
-`, someGuy, 50, 0)
-    projectile2.setPosition(0, Math.randomRange(0, 120))
-}
-let projectile2: Sprite = null
 let someGuy: Sprite = null
+let projectile2: Sprite = null
 player()
 projectile()
 game.onUpdate(function () {
